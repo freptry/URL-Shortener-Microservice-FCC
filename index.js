@@ -40,10 +40,10 @@ app.post('/api/shorturl', (req, res) => {
   const originalUrl = req.body.url;
 
   // Validate URL format
-  const isValidUrl = new URL(originalUrl).protocol.startsWith('http');
-  if (!isValidUrl) {
-    return res.json({ error: 'Invalid URL format' });
-  }
+  // const isValidUrl = new URL(originalUrl).protocol.startsWith('http');
+  // if (!isValidUrl) {
+  //   return res.json({ error: 'Invalid URL format' });
+  // }
 
   // Validate URL using DNS lookup
   dns.lookup(new URL(originalUrl).hostname, async (err) => {
